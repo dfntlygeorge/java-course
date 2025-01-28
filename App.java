@@ -1,60 +1,47 @@
+import java.util.Scanner;
+
 public class App {
+
     public static void main(String[] args) {
-        // 📌 A *variable* is a named storage for data. It has a type and a value.
+        Scanner sc = new Scanner(System.in);
+        // println() is like addting \n at the end
+        System.out.println("Enter your name: ");
+        // next() doesnt read any spaces, use nextLine() if may space
+        String name = sc.nextLine();
 
-        // 🔹 Primitive: Stores actual data (e.g., int, double, char, boolean).
-        // 🔹 Reference: Stores memory address of an object (e.g., String, arrays,
-        // custom classes).
+        // System.out.print("Enter your age: ");
+        // int age = sc.nextInt();
 
-        // ✅ Two steps to create a variable:
-        // 1️⃣ Declare: Specify type and name → `int age;`
-        // 2️⃣ Initialize: Assign a value → `age = 20;` (or do both in one step: `int
-        // age = 20;`)
+        System.out.print("What is your GWA? ");
+        double gwa = sc.nextDouble();
 
-        int age = 20;
-        int year = 2025;
-        System.out.println(age);
-        System.out.println("The year is " + year);
+        System.out.println("Are you a student? (true/false)");
+        boolean isStudent = sc.nextBoolean();
 
-        double gpa = 1.22;
-        double temp = -12.5;
-        double price = 69.99;
-
-        System.out.println(gpa);
-        System.out.println(temp);
-        System.out.println("$" + price);
-
-        char grade = 'A';
-        char symbol = '@';
-        char currency = '$';
-
-        System.out.println(grade);
-        System.out.println(symbol);
-        System.out.println(currency);
-
-        boolean isStudent = true;
-        boolean isWorking = false;
-        boolean forSale = false;
-
-        if (forSale) {
-            System.out.println("You are a for sale!");
-
+        System.out.println("Hello " + name);
+        // System.out.println("You are " + age + " years old");
+        System.out.println("Your GWA is " + gwa);
+        if (isStudent) {
+            System.out.println("You are ENROLLED");
         } else {
-            System.out.println("You are not for sale!");
+            System.out.println("You are NOT ENROLLED");
         }
-        // pag char single quote, pag string double quote
-        String name = "George Allz";
-        String food = "okra";
-        String email = "georgeallz@gmail.com";
-        String car = "Mercedes";
-        String color = "gray";
 
-        System.out.println("Hello! " + name);
-        System.out.println("My favorite food is " + food);
-        System.out.println("Email: " + email);
+        // COMMON ISSUES
 
-        System.out.println("Your choice is " + color + " " + year + " " + car);
-        System.out.println("The price is $" + price);
+        // 1. accepting int/double then string fixed by adding sc.nextLine() after
+        // int/double assignment.
+
+        System.out.print("Enter your age: ");
+        int age = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Enter your favorite color: ");
+        String color = sc.nextLine();
+
+        System.out.println("You are " + age + " years old");
+        System.out.println("Your favorite color is " + color);
+
+        sc.close();
 
     }
 }
